@@ -1,0 +1,22 @@
+name: 'example'
+version: '1.0.0'
+config-version: 2
+profile: 'example'
+source-paths: ["models"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+
+target-path: "target"  # directory which will store compiled SQL files
+clean-targets:         # directories to be removed by `dbt clean`
+    - "target"
+    - "dbt_modules"
+
+
+# Configuring models
+# Full documentation: https://docs.getdbt.com/docs/configuring-models
+
+models:
+  my_new_project:
+      ga:
+        # materialize all models in models/ga as tables
+        +materialized: table
