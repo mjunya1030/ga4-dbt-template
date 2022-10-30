@@ -2,7 +2,7 @@
 GoogleAnalytics4 の データに対してDBTによるパイプラインを作成するテンプレート
 
 ## Who is it for?
-- dbt のクエリを描くときに参考にしたい人
+- dbt のクエリを描くときに参考にしたい人向けのリポジトリ
 
 ## Prerequisites
 ### Software required
