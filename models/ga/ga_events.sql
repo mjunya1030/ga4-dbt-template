@@ -1,11 +1,13 @@
 {{
   config(
-    materialized='table',
+    materialized='incremental',
     partition_by={
       "field": "event_timestamp",
       "data_type": "timestamp",
       "granularity": "day"
-    }
+    },
+    on_schema_change='append_new_columns',
+    incremental_strategy='insert_overwrite'
   )
 }}
 
