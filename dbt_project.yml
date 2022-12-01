@@ -20,3 +20,5 @@ models:
       ga:
         # materialize all models in models/ga as tables
         +materialized: table
+  dbt_project_evaluator: 
+    + schema: project_evaluator
