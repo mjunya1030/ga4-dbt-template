@@ -31,4 +31,12 @@ models:
             tests:
                 - unique
                 - not_null
+    - name: rpt_access_count_by_date
+      description: |
+        日ごとのアクセス数を出したテーブル
+      columns:
+          - name: event_page_key
+            tests:
+                - unique
+                - not_null
                 

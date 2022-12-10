@@ -18,5 +18,12 @@ models:
             tests:
                 - unique
                 - not_null
-
+    - name: fct_dim_events_with_pages
+      description: "ページ名をつけたイベントログ"
+      columns:
+          - name: event_key
+            description: "イベントキー"
+            tests:
+                - unique
+                - not_null
 

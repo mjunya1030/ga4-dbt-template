@@ -1,15 +1,16 @@
 
 version: 2
 models:
-    # - name: stg_events
-    #   description: |
-    #     "ga4 のログを扱いやすいよう加工したテーブル"
-    #   columns:
-    #       - name: event_timestamp
-    #         description: |
-    #           タイムスタンプ
-    #         tests:
-    #             - not_null
+    - name: stg_events
+      description: |
+        "ga4 のログを扱いやすいよう加工したテーブル"
+      columns:
+          - name: event_timestamp
+            description: |
+              タイムスタンプ
+            tests:
+                - not_null
+                - unique
     - name: stg_page_display_names
       description: |
         ページ名マスタ
