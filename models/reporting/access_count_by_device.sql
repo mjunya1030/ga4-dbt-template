@@ -18,6 +18,6 @@ SELECT
   device_category
   , count(*) as access_count
 FROM
-  dbt_ga4.fct_events 
+  {{ ref('fct_events') }}
 group by
   device_category
