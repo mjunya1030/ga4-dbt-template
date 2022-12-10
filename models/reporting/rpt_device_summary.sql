@@ -22,10 +22,24 @@ with session_count as (
   group by device_category
 )
 
+, uu_counts as (
+  SELECT
+    device_category
+    , count(distinct user_pseudo_id) as uu_count
+
+  FROM
+    {{ ref('fct_events') }}
+  where device_category is not null
+  group by device_category
+)
+
 select
   session_count.device_category
   , session_count.session_count
   , int_device_count.pv_count
+  , uu_count.uu_count
 from session_count
 left outer join {{ ref('int_device_count') }} as int_device_count
   on session_count.device_category = int_device_count.device_category
+left outer join uu_counts as uu_count
+  on session_count.device_category = uu_counts.device_category
