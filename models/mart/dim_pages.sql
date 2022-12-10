@@ -16,4 +16,4 @@ SELECT
   page_display_names.page_display_name
   , page_display_names.page_location
 FROM
-  {{ source('analytics_272722196', 'page_display_names') }} as page_display_names
+  {{ ref('stg_page_display_names') }} as page_display_names
