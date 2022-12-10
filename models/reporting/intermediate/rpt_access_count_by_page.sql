@@ -21,7 +21,7 @@ SELECT
 FROM
   {{ ref('stg_events') }} as events
 left outer join
-  {{ source('analytics_272722196', 'page_display_names') }} as page_display_names
+  {{ ref('stg_page_display_names') }} as page_display_names
   on events.page_location = page_display_names.page_location
 where page_display_name is not null
 group by
