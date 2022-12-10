@@ -1,0 +1,14 @@
+
+version: 2
+models:
+
+    - name: int_device_count
+      description: |
+        デバイスごとのPV数を出したテーブル
+      columns:
+          - name: device_category
+            description: |
+              デバイス
+            tests:
+                - unique
+                - not_null

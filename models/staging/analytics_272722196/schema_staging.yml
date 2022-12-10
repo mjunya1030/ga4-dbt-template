@@ -1,0 +1,42 @@
+
+version: 2
+models:
+    # - name: stg_events
+    #   description: |
+    #     "ga4 のログを扱いやすいよう加工したテーブル"
+    #   columns:
+    #       - name: event_timestamp
+    #         description: |
+    #           タイムスタンプ
+    #         tests:
+    #             - not_null
+    - name: stg_page_display_names
+      description: |
+        ページ名マスタ
+      columns:
+          - name: page_location
+            description: |
+              "ページのURL"
+            tests:
+                - unique
+                - not_null
+    - name: stg_events_and_names
+      description: |
+        イベントとページ名を結合したテーブル
+      columns:
+          - name: event_key
+            description: |
+              ページ名
+            tests:
+                - unique
+                - not_null
+    - name: stg_access_count_by_date
+      description: |
+        pvを日ごとに集計したテーブル
+      columns:
+          - name: event_page_key
+            description: |
+              ページ名と日付で作成されたサロゲートキー
+            tests:
+                - unique
+                - not_null

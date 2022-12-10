@@ -1,0 +1,13 @@
+
+
+# このモデルは以下の例外を起こします
+
+# - fct_source_directories
+
+version: 2
+sources:
+  - name: analytics_272722196
+    tables:
+      - name: events_*
+      - name: page_display_names
+      - name: article_types # unused_source

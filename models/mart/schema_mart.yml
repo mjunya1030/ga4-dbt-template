@@ -1,0 +1,22 @@
+
+version: 2
+
+models:
+    - name: dim_pages
+      description: "ページ名マスタ"
+      columns:
+          - name: page_location
+            description: "ページURL"
+            tests:
+                - unique
+                - not_null
+    - name: fct_events
+      description: "イベントログ"
+      columns:
+          - name: event_key
+            description: "イベントキー"
+            tests:
+                - unique
+                - not_null
+
+

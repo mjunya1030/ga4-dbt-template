@@ -5,6 +5,7 @@ profile: 'default'
 source-paths: ["models"]
 test-paths: ["tests"]
 macro-paths: ["macros"]
+seed-paths: ["seeds"]
 
 target-path: "target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
@@ -22,3 +23,17 @@ models:
         +materialized: table
   dbt_project_evaluator: 
     + schema: project_evaluator
+    +enabled: "{{ env_var('ENABLE_DBT_PROJECT_EVALUATOR', true) }}"
+
+tests:
+  dbt_project_evaluator:
+    +severity: "{{ env_var('DBT_PROJECT_EVALUATOR_SEVERITY', 'error') }}"
+
+seeds:
+  dbt_project_evaluator:
+    dbt_project_evaluator_exceptions:
+      +enabled: false
+
+# vars:
+#   dbt_project_evaluator:
+#     chained_views_threshold: 3

@@ -1,0 +1,18 @@
+
+version: 2
+
+exposures:
+  - name: GAイベントログ
+    type: analysis
+    maturity: medium
+    url: ""
+    description: >
+      このデータはGAイベントを使いやすく加工したテーブルです。
+    
+    depends_on:
+      - ref('fct_dim_events_with_pages')
+      
+    owner:
+      name: Junya MORITA
+      email: "mjunya1030@gmail.com"
+

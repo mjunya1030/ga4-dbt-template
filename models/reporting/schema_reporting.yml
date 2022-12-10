@@ -1,0 +1,34 @@
+
+version: 2
+models:
+    - name: rpt_access_count_by_page
+      description: |
+        ページごとのアクセス数を出したテーブル
+      columns:
+          - name: page_display_name
+            description: |
+              ページ名
+            tests:
+                - unique
+                - not_null
+    - name: rpt_device_summary
+      description: |
+        デバイスごとのPV数とUU数を出したテーブル
+      columns:
+          - name: device_category
+            description: |
+              デバイス
+            tests:
+                - unique
+                - not_null
+    - name: rpt_access_count_by_device
+      description: |
+        デバイスごとのPV数を出したテーブル
+      columns:
+          - name: device_category
+            description: |
+              デバイス
+            tests:
+                - unique
+                - not_null
+                
