@@ -8,7 +8,7 @@
 
 {{
   config(
-    materialized='view',
+    materialized='table',
   )
 }}
 
